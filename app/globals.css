@@ -1610,3 +1610,47 @@ h1 { font-weight: 500; }
 .nightfall .card::after { display: none; }
 .nightfall .eyebrow::before { background: linear-gradient(90deg, transparent, var(--accent)); }
 .nightfall .lede, .nightfall .starline { text-shadow: 0 2px 22px rgba(0, 0, 0, .5); }
+
+/* ─────────── photographs keep their own shape ───────────
+   The frame used to force every photo into a 4:3 landscape box and crop
+   the overflow, which quietly beheaded anyone in a portrait phone photo.
+   Now the frame takes the shape of whatever is put in it — a portrait
+   stays portrait, a landscape stays landscape — and nothing is cut.
+   A polaroid of varying height is fine; a cropped face is not. */
+.photoframe .inner {
+  aspect-ratio: auto;
+  overflow: hidden;
+  display: block;
+  min-height: 70px;
+}
+.photoframe img {
+  width: 100%;
+  height: auto;
+  max-height: 68vh;          /* stops a very tall photo filling the screen */
+  object-fit: contain;
+  display: block;
+}
+/* the empty-frame placeholder still needs a shape of its own */
+.photoframe .inner:has(.emptyframe) {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+}
+
+/* ── optional: crop a specific photo on purpose ──────────────────────
+   If you WANT one photo cropped square-ish rather than shown whole,
+   name it here. object-position picks what survives the crop:
+   "50% 30%" keeps the upper-middle, which is where faces usually are.
+
+.photoframe img[src*="rings"] {
+  aspect-ratio: 4 / 3;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+*/
+
+/* Exhibits used to cap their opened height at 760px, which was fine for a
+   cropped 4:3 photo and clips a full-height portrait one. Raised enough
+   that the tallest photo plus its story still fits. */
+.exhibit[aria-expanded="true"] .exopen { max-height: 3000px; }
