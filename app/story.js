@@ -15,11 +15,15 @@ export const STORY = {
   anniversary: "2026-10-25",
 
   /* A real song: drop the mp3 in public/ and set "/ours.mp3".
-     Leave null for the soft generated chord. */
-  song: null,
+     Leave null for the soft generated chord.
+     Keep the .mp3 extension. A file named .mpeg is served as video/mpeg
+     and many browsers refuse to play it as audio — and if this path
+     fails, the music button reads "unavailable" rather than falling
+     back to the generated chord. */
+  song: "/photos/music.mp3",
 
   /* The hero photo on the opening page. */
-  heroPhoto: null, // e.g. "/photos/hero.jpg"
+  heroPhoto: "/photos/hero.jpeg",
 
   /* ── the two characters: what they say when she taps them ───────── */
   pokes: [
@@ -45,31 +49,31 @@ museum: [
     n: "Exhibit 001",
     t: "Our most ridiculous conversations",
     story: "Somewhere between being serious about absolutely nothing and laughing at things nobody else would understand, we built a little world of our own. I don't think anyone else would find every conversation of ours interesting. That's the beautiful part. They don't have to. Some things are special simply because they belong to us.",
-    photo: null,
+    photo: "/photos/conversations.jpeg",
   },
   {
     n: "Exhibit 002",
     t: "A message I'd frame if I could",
     story: "If I could frame one sentence for you to read on a difficult day, it would be this: you were my best friend before you were my girlfriend, and you never had to become anything more than yourself to matter to me. You don't have to be cheerful, impressive, strong, or perfect to be loved by me.",
-    photo: null,
+    photo: "/photos/message.jpeg",
   },
   {
     n: "Exhibit 003",
     t: "Our little adventures",
-    story: "Digha, the white T-shirt, the white and sky-blue Punjabi, and a day that became part of our story. Even when a memory begins as an ordinary day, it can become something you want to keep. Someday, I hope we look back at all these little chapters and smile at how much life we had yet to discover together.",
-    photo: null,
+    story: "The small outings, the ordinary afternoons, the days that never announced themselves as anything special while they were happening. Even when a memory begins as an ordinary day, it can become something you want to keep. Someday, I hope we look back at all these little chapters and smile at how much life we had yet to discover together.",
+    photo: "/photos/adventures.jpeg",
   },
   {
     n: "Exhibit 004",
     t: "Proof that we're both a bit weird",
     story: "We don't need to be a perfectly polished couple. I would rather have something real: our own conversations, our own ways of understanding each other, and the freedom to be ourselves. I hope we never become so busy trying to look like a perfect couple that we forget to enjoy being us.",
-    photo: null,
+    photo: "/photos/weird.jpeg",
   },
   {
     n: "Exhibit 005",
     t: "The tissue-paper rings",
     story: "They weren't expensive jewellery. They didn't need a fancy box or a grand setting. But they became part of our story, and that's what makes them precious to me. One day, we might own beautiful things, buy gifts for each other, and celebrate in grander ways. I still hope we remember that love was never about the price of what we gave. It was about the meaning we gave it.",
-    photo: null,
+    photo: "/photos/rings.jpeg",
   },
 ],
 
@@ -81,31 +85,31 @@ chapters: [
     n: "Chapter one",
     t: "The beginning",
     x: "25 October 2025. The day our story officially became ours. But you were already important to me before that date. You were my best friend first, and perhaps that's why this beginning meant so much. I wasn't beginning a story with a stranger. I was taking a step with someone I already knew I wanted in my life.",
-    photo: null,
+    photo: "/photos/chapter-1.jpeg",
   },
   {
     n: "Chapter two",
     t: "Our little world",
     x: "The conversations, the familiar feeling of talking to you, the small things that slowly became ours. Somewhere along the way, you stopped being just someone I wanted to tell things to. You became one of the people I wanted to tell everything to. And without any grand announcement, our ordinary moments became memories I wanted to keep.",
-    photo: null,
+    photo: "/photos/chapter-2.jpeg",
   },
   {
     n: "Chapter three",
     t: "The moments we kept",
-    x: "Digha, little adventures, photographs, and moments that might look ordinary to everyone else. I want us to keep collecting them. Not only the perfect pictures, but the silly ones, the imperfect days, and the memories that make us say, 'Do you remember that?' years later.",
-    photo: null,
+    x: "Little adventures, photographs, and moments that might look ordinary to everyone else. I want us to keep collecting them. Not only the perfect pictures, but the silly ones, the imperfect days, and the memories that make us say, 'Do you remember that?' years later.",
+    photo: "/photos/chapter-3.jpeg",
   },
   {
     n: "Chapter four",
     t: "Growing together",
     x: "A year cannot be measured only by happy photographs. It is also made of learning, uncertainty, difficult conversations, and understanding that loving someone means continuing to learn how to love them well. I don't want us to be perfect at this. I want us to be honest, patient, willing to listen, and willing to grow.",
-    photo: null,
+    photo: "/photos/chapter-4.jpeg",
   },
   {
     n: "Chapter five",
     t: "Today",
     x: "25 October 2026. One year since we officially became us. I don't know every detail of what the next chapters will look like, but I know I want to keep discovering them. I want more conversations, more adventures, more ordinary days, and more chances to make you feel as loved as you deserve to feel.",
-    photo: null,
+    photo: "/photos/chapter-5.jpeg",
   },
 ],
 
@@ -211,7 +215,7 @@ letter: [
   ],
 
   /* ── page: the finale ───────────────────────────────────────────── */
-  finalePhoto: null, // "/photos/favourite.jpg"
+  finalePhoto: "/photos/finale.jpeg",
   
 starLines: {
   sayak: "This year taught me that love isn't only finding someone special. It's learning to care for the person who was already my friend, and choosing to keep growing beside her.",
@@ -250,37 +254,37 @@ envelopes: [
     label: "when you're missing me",
     note: "My Debi, if I could be beside you right now, I wouldn't try to make the distance sound smaller than it feels. I would just sit close to you, hold your hand, and let you miss me without having to hide it. I miss you too, in all the little spaces where I wish you were here. Until I can be there, please remember that being apart doesn't erase what we share. You are still my best friend, still my person, and still the girl I want to tell about my day. Imagine me asking you how you're doing, then actually waiting for the answer. You don't have to be okay with the distance every day. I love you on the days you handle it beautifully and on the days you wish you didn't have to handle it at all.",
     audio: null,
-    photo: null,
+    photo: "/photos/open-missing.jpeg",
   },
   {
     label: "when you've had a difficult day",
     note: "Come here, my love. You don't have to explain everything perfectly. You don't have to turn this day into a lesson or find a silver lining before you're allowed to rest. If all you did today was get through it, that counts too. I am not here only for the cheerful version of you, the successful version of you, or the version who has everything figured out. I want you to feel safe being tired, upset, uncertain, or quiet with me. If you want to talk, I will listen. If you want a distraction, we'll find one. If you want silence, you don't have to fill it. You are loved even on the days when you don't feel like your best self. Especially then, please be gentle with yourself.",
     audio: null,
-    photo: null,
+    photo: "/photos/open-difficult.jpeg",
   },
   {
     label: "when you need a laugh",
     note: "Debi, emergency notice: your boyfriend has once again spent an unreasonable amount of time making a website instead of behaving like a normal person. Somewhere out there, I am probably adjusting a tiny detail and convincing myself that this is absolutely necessary. The situation is serious. The hearts must float correctly. The colours must be right. The universe must be lovingly overengineered. And after all that, I still cannot guarantee that I will win our next argument. I hope you're smiling now, even a little. If not, imagine me trying to defend the importance of one more tiny animation with a completely straight face. I love you, you ridiculous little favourite person of mine.",
     audio: null,
-    photo: null,
+    photo: "/photos/open-laugh.jpeg",
   },
   {
     label: "when you're proud of yourself",
     note: "Stop for a moment, my love. Before you rush to the next thing, before you decide what you still haven't done, let yourself recognise how far you've come. Your dreams matter. Your education matters. Your ambitions and the future you're trying to build matter. You do not have to reach the final destination before you're allowed to be proud of the distance you've travelled. I hope you learn to celebrate yourself even when nobody else notices the effort it took. I hope you never confuse a difficult phase with a failed life. I am proud of the person you are, and I want you to be proud of her too. Keep going at your own pace. Your worth was never waiting at some finish line.",
     audio: null,
-    photo: null,
+    photo: "/photos/open-proud.jpeg",
   },
   {
     label: "when you need quiet",
     note: "My love, you don't have to reply to this. You don't have to explain why you're quiet or apologise for needing time to yourself. Rest your mind. Put your phone down. Do something that makes the world feel a little less loud. Love should leave room for breathing, for individuality, for days when you have nothing left to say. I want you to have a life that feels like yours, dreams that belong to you, and enough space to hear your own thoughts. I will not measure your love by how quickly you answer a message. When you're ready to talk, I'll be happy to hear from you. Until then, take care of yourself. You can be loved and still need space. Those two things can exist together.",
     audio: null,
-    photo: null,
+    photo: "/photos/open-quiet.jpeg",
   },
   {
     label: "when you doubt us",
     note: "My Debi, I won't ask you to pretend that love means never having doubts, never getting hurt, or never finding anything difficult. We're two people learning, and I know that love needs more than beautiful words on a special day. It needs honesty when the truth is uncomfortable, patience when understanding takes time, accountability when we get things wrong, and respect for each other's choices. I cannot promise that every day will be easy or that I will always know the right thing to say. I can promise that I want to keep learning how to love you better. I want us to be able to speak honestly, listen without rushing to defend ourselves, and make room for both of our feelings. You don't owe me blind faith. I want to build a relationship where trust can grow through what we do, not just what we say. Remember the friendship that came before this anniversary. Remember the person you are, too. Whatever we face, I want us to meet it with care, courage, and kindness toward each other.",
     audio: null,
-    photo: null,
+    photo: "/photos/open-doubt.jpeg",
   },
 ],
 
